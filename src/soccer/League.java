@@ -32,14 +32,35 @@ public class League {
         team2.playerArray[2].playerName = "Phumlani Mthembu";
 
 
-        for (Player thePlayer: team1.playerArray){
+        Game currentGame = new Game();
+        currentGame.homeTeam = team1;
+        currentGame.awayTeam = team2;
 
-            System.out.println(thePlayer.playerName);
-        }
+        Goal goal1 = new Goal();
+        goal1.thePlayer = currentGame.homeTeam.playerArray[2];
+        goal1.theTeam = currentGame.homeTeam;
+        goal1.theTime = 55;
 
-        for (Player thePlayer: team2.playerArray){
+        Goal[] theGoals = {goal1};
+        currentGame.goals = theGoals;
 
-            System.out.println(thePlayer.playerName);
-        }
+
+        System.out.println("Goal scored after " +
+             currentGame.goals[0].theTime + " mins by " +
+             currentGame.goals[0].thePlayer.playerName + " of " +
+             currentGame.goals[0].theTeam.teamName);
+
+
+        /*this for loop iterate the playerArray */
+//
+//        for (Player thePlayer: team1.playerArray){
+//
+//            System.out.println(thePlayer.playerName);
+//        }
+//
+//        for (Player thePlayer: team2.playerArray){
+//
+//            System.out.println(thePlayer.playerName);
+//        }
     }
 }
