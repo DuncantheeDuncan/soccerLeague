@@ -52,36 +52,43 @@ public class League {
 
 
         for (Player thePlayer : team2.playerArray) {
-//            if (thePlayer.playerName.matches(".*mla.*")) {// .*string.* searches and print the whole String..
-            StringBuilder familyNameFirst = new StringBuilder();
-//                System.out.println("Found " + thePlayer.playerName);
-                System.out.println("Last Name is: "+thePlayer.playerName.split(" ")[1]);
-                String name[] =thePlayer.playerName.split(" ");
+
+
+            if (thePlayer.playerName.matches(".*mla.*")) {// .*string.* searches and print the whole String.
+                System.out.println("------ from team 2 --------------");
+                System.out.println("Found " + thePlayer.playerName);
+                System.out.println("Last Name is: " + thePlayer.playerName.split(" ")[1]);
+
+                StringBuilder familyNameFirst = new StringBuilder();
+                System.out.println("------ from team 1 -------");
+                for (Player thePlayer2 : team1.playerArray) {
+
+                    String name[] = thePlayer2.playerName.split(" ");
+                    familyNameFirst.append(name[1]);
+                    familyNameFirst.append(", ");
+                    familyNameFirst.append(name[0]);
+                    System.out.println(familyNameFirst);
+                    familyNameFirst.delete(0,familyNameFirst.length());
 
 
 
-                familyNameFirst.append(name[1]);
-                familyNameFirst.append(", ");
-                familyNameFirst.append(name[0]);
-                System.out.println(familyNameFirst);
-                familyNameFirst.delete(0, familyNameFirst.length());// this does not seem to work..
+
+                }
+            }
 
 
-//            }
-
-
-
-            /*this for loop iterate the playerArray */
-//
-//        for (Player thePlayer: team1.playerArray){
-//
-//            System.out.println(thePlayer.playerName);
-//        }
-//
-//        for (Player thePlayer: team2.playerArray){
-//
-//            System.out.println(thePlayer.playerName);
-//        }
         }
+
+
+
     }
+
+
+
+    public static Team[] creatTeams(){
+        Team[] theTeams = {team1, team2};
+
+        return  theTeams;
+    }
+
 }
