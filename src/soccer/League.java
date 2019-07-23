@@ -4,6 +4,20 @@ public class League {
 
     public static void main(String[] args) {
 
+        Team[] theTeams = createTeams();
+        Game[] theGames = createGames(theTeams);
+
+        Game currentGame = theGames[0];
+
+// TODO: 2019/07/23
+
+
+
+
+
+
+
+
         Player player1 = new Player();
         player1.playerName = "George Elliot";
 
@@ -18,7 +32,7 @@ public class League {
         team1.teamName = "The Greens";
         team1.playerArray = thePlayers;
 
-//        player1.playerName ="Robert Service";
+
         Team team2 = new Team();
         team2.teamName = "The Reds";
         team2.playerArray = new Player[3];
@@ -31,10 +45,12 @@ public class League {
         team2.playerArray[2] = new Player();
         team2.playerArray[2].playerName = "Phumlani Mthembu";
 
-
+/*
+TODO:// delete
         Game currentGame = new Game();
         currentGame.homeTeam = team1;
         currentGame.awayTeam = team2;
+*/
 
         Goal goal1 = new Goal();
         goal1.thePlayer = currentGame.homeTeam.playerArray[2];
@@ -85,10 +101,20 @@ public class League {
 
 
 
-    public static Team[] creatTeams(){
+    public static Team[] createTeams(Team team1, Team team2){
         Team[] theTeams = {team1, team2};
 
         return  theTeams;
+    }
+
+    public static Game[] createGames(Team[] theTeams){
+    Game theGame = new Game();
+    theGame.homeTeam = theTeams[0];
+    theGame.awayTeam = theTeams[1];
+
+    Game[] theGames = {theGame};
+
+    return theGames;
     }
 
 }
