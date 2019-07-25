@@ -38,26 +38,36 @@ public class League {
 
 
         Game currentGame = theGames[0];
+
+        int numberOfGoals = (int)(Math.random() * 7);
+
+        System.out.println(numberOfGoals);
+
+        Goal[] theGoals = new Goal[numberOfGoals];
+//        System.out.println(theGoals.length);
+        currentGame.goals = theGoals;
+
 //
 //        Game currentGame = new Game();
 //        currentGame.homeTeam = team1;
 //        currentGame.awayTeam = team2;
 
-        Goal goal1 = new Goal();
+//        Goal goal1 = new Goal();
 //        System.out.println();
+//
+//        int index = 2;
+//        goal1.thePlayer = currentGame.awayTeam.playerArray[index];
+//        goal1.theTeam = currentGame.awayTeam;
+//        goal1.theTime = 55;
+//
+//        Goal[] theGoals = {Team};
+//        currentGame.goals = theGoals;
 
-        goal1.thePlayer = currentGame.awayTeam.playerArray[2];
-        goal1.theTeam = currentGame.awayTeam;
-        goal1.theTime = 55;
 
-        Goal[] theGoals = {goal1};
-        currentGame.goals = theGoals;
-
-
-        System.out.println("Goal scored after " +
+     /*   System.out.println("Goal scored after " +
                 currentGame.goals[0].theTime + " mins by " +
                 currentGame.goals[0].thePlayer.playerName + " of " +
-                currentGame.goals[0].theTeam.teamName);
+                currentGame.goals[0].theTeam.teamName);*/
 
 
 //        for (Player thePlayer : team2.playerArray) {
@@ -96,26 +106,43 @@ public class League {
 
     public static Team[] createTeams(){
 
+// home team team 1
 
         Team team1 = new Team();
         team1.teamName = "Keizer chiefs";
-       // team1.playerArray = thePlayers;
+        team1.playerArray = new Player[3];
+        team1.playerArray[0] = new Player();
+        team1.playerArray[0].playerName = "Robert Stevens";
+
+        team1.playerArray[1] = new Player();
+        team1.playerArray[1].playerName = "Robbie Burns";
+
+        team1.playerArray[2] = new Player();
+        team1.playerArray[2].playerName = "Khama Billiat";
+//TODO: add more players
 
 // away team team2
 
         Team team2 = new Team();
         team2.teamName = "Orlando Pirates";
-        team2.playerArray = new Player[3];
+        team2.playerArray = new Player[5];
         team2.playerArray[0] = new Player();
-        team2.playerArray[0].playerName = "Robert Stevens";
+        team2.playerArray[0].playerName = "Siyabonga Mpontshane";
 
         team2.playerArray[1] = new Player();
-        team2.playerArray[1].playerName = "Robbie Burns";
+        team2.playerArray[1].playerName = "Nhlanhla Khuzwayo";
 
         team2.playerArray[2] = new Player();
         team2.playerArray[2].playerName = "Phumlani Mthembu";
 
+        team2.playerArray[3] = new Player();
+        team2.playerArray[3].playerName = "Happy Jele";
 
+        team2.playerArray[4] = new Player();
+        team2.playerArray[4].playerName = "Mthokozisi Dube";
+//TODO: add more players
+
+        
 
 
         Team[] theTeams = {team1, team2};
@@ -136,5 +163,6 @@ public class League {
 
         return theGames;
     }
+
 
 }
