@@ -1,5 +1,8 @@
 package soccer;
 
+
+import static utility.GameUtils.addGameGoals;
+
 public class League {
 
     public static void main(String[] args) {
@@ -47,7 +50,19 @@ public class League {
 //        System.out.println(theGoals.length);
         currentGame.goals = theGoals;
 
-//
+        addGameGoals(currentGame);
+        addGameGoals(currentGame);
+
+        for (Goal currGoal: currentGame.goals){
+
+            System.out.println("Goal scored after " +
+                    currGoal.theTime + " mins by " +
+                    currGoal.thePlayer.playerName +
+                    " of " + currGoal.theTeam.teamName);
+
+        }
+//TODO: GAME METHOD
+
 //        Game currentGame = new Game();
 //        currentGame.homeTeam = team1;
 //        currentGame.awayTeam = team2;
@@ -147,9 +162,9 @@ public class League {
 
         Team[] theTeams = {team1, team2};
 
-
         return  theTeams;
     }
+
 
 
     public static Game[] createGames(Team[] theTeams) {
